@@ -1,0 +1,11 @@
+function  [y_0,x1_updated] = Luenberger_observer(x0,sys,u0,y_plant_0,L)
+%% Luenberger observer
+%% L observer gain is calculated using pole placement
+% Model prediction
+x1_predicted    = sys.a*x0              + sys.b*u0;
+y_0             = sys.c*x0+sys.d*u0;
+e_0             = y_plant_0             - y_0;
+% Updating state
+x1_updated      = x1_predicted          + L*e_0;
+% y_1 = sys.C*x1_predicted;
+end
