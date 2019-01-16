@@ -1,6 +1,6 @@
 function  [y,x,P] = lin_sys_kalman(x0,sys,u,y_plant,P,Q,R)
 % Adaptive Kalman filter for linear and linearized models 
-%Get the model size
+%Get the model size psrameters
 [n,m] = size(sys.b);
 %Initilize all the vectors and Matrices
 l = size(sys.c,1);
